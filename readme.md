@@ -26,7 +26,7 @@ echo  $form
         ->widget(\lgxenos\yii2\imgSelector\ImageSelector::className()); 
 ```
 
-[[https://github.com/lgXenos/yii2-recaptcha/blob/master/about.png|alt=about]]
+!(https://github.com/lgXenos/yii2-img-selector/blob/master/about.png)
 
 ### About In English
 
