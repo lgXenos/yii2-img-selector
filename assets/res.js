@@ -26,13 +26,14 @@ $(document).on('click', '.js_RemoveImg', function (e) {
 /*
  на нужных ссылках инициализируем фанси-бокс
  */
-$('.iframe-btn').fancybox({
-	'width': 900,
-	'height': 600,
-	'type': 'iframe',
-	'autoSize': false
-});
-
+function initImageSelectorPopups() {
+	$('.iframe-btn').fancybox({
+		'width': 900,
+		'height': 600,
+		'type': 'iframe',
+		'autoSize': false
+	});
+}
 
 /**
  * очищаем див с превьюшкой

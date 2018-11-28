@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class ImageSelectorAsset extends AssetBundle {
 
-    public $sourcePath = '@vendor/lg-xenos/yii2-img-selector/assets';
+	public $sourcePath = '@vendor/lg-xenos/yii2-img-selector/assets';
 
 	public $js = [
 		'fancybox.min.js',
@@ -19,7 +19,7 @@ class ImageSelectorAsset extends AssetBundle {
 	public $depends = [
 		'yii\web\JqueryAsset',
 	];
-	
+
 	public function init() {
 		//$this->setSourcePath(__DIR__ . '/assets');
 		// $this->setupAssets('css', []);

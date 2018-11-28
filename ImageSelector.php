@@ -7,14 +7,15 @@ use yii\widgets\InputWidget;
 use yii\base\ErrorException;
 
 class ImageSelector extends InputWidget {
-	
+
 	/** @var string путь к Responsive File Manager */
 	public $fileManagerPathTpl;
+
 	// например: '/adm-scripts/responsivefilemanager/filemanager/dialog.php?type=1&field_id=%s&relative_url=0&callback=ImageSelectorCallBack'
-	
+
 	public function run() {
 		// если не настроен путь - говорим про это
-		if(!$this->fileManagerPathTpl){
+		if (!$this->fileManagerPathTpl) {
 			throw new ErrorException('Укажите fileManagerPathTpl в bootstrap.php для lgxenos\yii2\imgSelector\ImageSelector');
 		}
 		// иначе начинаем конфигурироваться
@@ -47,15 +48,27 @@ class ImageSelector extends InputWidget {
 				<span class="col-sm-10 center-block">' . $input . '<br>' . $selectImgBtn . ' ' . $removeImgBtn . '</span>
 			</div>
 		';
-		
+
 		$this->registerClientScript();
 	}
-	
+
 	private function registerClientScript() {
-		
+
+		static $init = null;
+		if (is_null($init)) {
+			$init = true;
+			echo <<<HTML
+			<script type="text/javascript">
+			$( document ).ready(function() {
+				initImageSelectorPopups();
+			});
+			</script>
+HTML;
+		}
+
 		$view = $this->getView();
-		
+
 		ImageSelectorAsset::register($view);
-		
+
 	}
 }
